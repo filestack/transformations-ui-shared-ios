@@ -9,7 +9,7 @@
 import UIKit
 
 public extension UIColor {
-    static func fromFrameworkBundle(_ name: String) -> UIColor {
+    static func fromBundle(_ name: String) -> UIColor {
         return UIColor(named: name, in: bundle, compatibleWith: nil) ?? UIColor()
     }
 }

@@ -34,11 +34,11 @@ extension Constants.Spacing {
 }
 
 extension Constants.Color {
-    public static let background = UIColor.fromFrameworkBundle("background")
-    public static let moduleBackground = UIColor.fromFrameworkBundle("moduleBackground")
-    public static let innerToolbar = UIColor.fromFrameworkBundle("innerToolbar")
-    public static let defaultTint = UIColor.fromFrameworkBundle("defaultTint")
-    public static let primaryActionTint = UIColor.fromFrameworkBundle("primaryActionTint")
+    public static let background = UIColor.fromBundle("Background")
+    public static let moduleBackground = UIColor.fromBundle("ModuleBackground")
+    public static let innerToolbar = UIColor.fromBundle("InnerToolbar")
+    public static let defaultTint = UIColor.fromBundle("DefaultTint")
+    public static let primaryActionTint = UIColor.fromBundle("PrimaryActionTint")
 }
 
 extension Constants.Misc {
