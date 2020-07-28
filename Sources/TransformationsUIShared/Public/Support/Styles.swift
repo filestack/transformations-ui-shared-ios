@@ -24,24 +24,29 @@ extension EditorToolbarStyle {
 
     public static let segments = EditorToolbarStyle {
         $0.fixedHeight = Constants.Size.defaultToolbarHeight
-        $0.backgroundColor = Constants.Color.innerToolbar
-        $0.itemStyle = .default
+        $0.innerInset = Constants.Spacing.toolbarInset
+        $0.itemSpacing = Constants.Spacing.toolbarItem
+        $0.itemStyle = .textOnly
+    }
+
+    public static let twoRowSegments = EditorToolbarStyle {
+        $0.fixedHeight = Constants.Size.largeToolbarHeight
+        $0.innerInset = Constants.Spacing.toolbarItem
+        $0.itemSpacing = Constants.Spacing.toolbarItem
+        $0.itemStyle = .textOnly
     }
 
     public static let commands = EditorToolbarStyle {
         $0.fixedHeight = Constants.Size.defaultToolbarHeight
-        $0.backgroundColor = Constants.Color.innerToolbar
         $0.itemStyle = .round
     }
 
     public static let largeCommands = EditorToolbarStyle {
         $0.fixedHeight = Constants.Size.largeToolbarHeight
-        $0.backgroundColor = Constants.Color.innerToolbar
         $0.itemStyle = .round
     }
 
     public static let boundedRangeCommand = EditorToolbarStyle {
-        $0.backgroundColor = Constants.Color.innerToolbar
         $0.innerInset = Constants.Spacing.toolbarInset
         $0.itemSpacing = Constants.Spacing.toolbarItem * 2
         $0.itemStyle = .default
@@ -52,6 +57,11 @@ extension EditorToolbarStyle {
 extension EditorToolbarItemStyle {
     public static let `default` = EditorToolbarItemStyle {
         $0.tintColor = Constants.Color.defaultTint
+    }
+
+    public static let textOnly = EditorToolbarItemStyle {
+        $0.tintColor = Constants.Color.defaultTint
+        $0.mode = .text
     }
 
     public static let round = EditorToolbarItemStyle {

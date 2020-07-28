@@ -15,12 +15,14 @@ public struct Constants {
     public struct Margin {}
     public struct Misc {}
     public struct Animations {}
+    public struct ViewEffects {}
 }
 
 extension Constants.Size {
     public static let defaultToolbarHeight: CGFloat = 60
     public static let mediumToolbarHeight: CGFloat = 70
-    public static let largeToolbarHeight: CGFloat = 80
+    public static let largeToolbarHeight: CGFloat = 82
+    public static let segmentToolbarHeight: CGFloat = 82
 
     public static let toolbarItem = CGSize(width: 60, height: 60)
     public static let wideToolbarItem = CGSize(width: 80, height: 60)
@@ -44,18 +46,28 @@ extension Constants.Color {
 extension Constants.Misc {
     public static let cropHandleRadius: CGFloat = 9
     public static let cropLineThickness: CGFloat = 3
-    public static let cropOutsideOpacity: Float = 0.7
+    public static let cropOutsideOpacity: Float = 0.75
 }
 
 extension Constants.Animations {
-    public static func `default`(_ block: @escaping () -> Void) {
-        UIView.animate(withDuration: 0.25,
-            delay: 0,
-            usingSpringWithDamping: 0.6,
-            initialSpringVelocity: 1,
+    public static func `default`(duration: TimeInterval = 0.25, delay: TimeInterval = 0, animations: @escaping () -> Void, completion: ((Bool) -> Void)? = nil) {
+        UIView.animate(withDuration: duration,
+            delay: delay,
+            usingSpringWithDamping: 0.9,
+            initialSpringVelocity: 0.9,
             options: [.curveEaseInOut],
-            animations: { block() },
-            completion: nil
+            animations: animations,
+            completion: completion
         )
     }
+}
+
+extension Constants.ViewEffects {
+    public static let blur: UIBlurEffect = {
+        if #available(iOS 13.0, *) {
+            return UIBlurEffect(style: .systemChromeMaterial)
+        } else {
+            return UIBlurEffect(style: .regular)
+        }
+    }()
 }
