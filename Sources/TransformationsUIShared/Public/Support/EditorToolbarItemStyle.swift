@@ -8,6 +8,12 @@
 
 import UIKit
 
+public enum EditorToolbarItemMode {
+    case text
+    case image
+    case both
+}
+
 public struct EditorToolbarItemStyle {
     /// Defines the default text alignment for the text in this toolbar item.
     public var textAlignment: NSTextAlignment = .natural
@@ -17,6 +23,8 @@ public struct EditorToolbarItemStyle {
     public var spacing: CGFloat = 0
     /// Defines the corner radius to apply to the icon.
     public var cornerRadius: CGFloat = 0
+    /// Defines how the item should be displayed: as text, as image, or both.
+    public var mode: EditorToolbarItemMode = .both
 
     public init(_ build: (inout EditorToolbarItemStyle) -> Void) {
         build(&self)

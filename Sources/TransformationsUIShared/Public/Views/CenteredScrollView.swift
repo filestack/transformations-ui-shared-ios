@@ -11,7 +11,10 @@ import UIKit
 public class CenteredScrollView: UIScrollView {
     /// Allows adding extra insets to the auto managed `contentInset`.
     public var extraContentInset: UIEdgeInsets = .zero {
-        didSet { setNeedsLayout() }
+        didSet {
+            contentInset = contentInset.adding(insets: extraContentInset)
+            layoutIfNeeded()
+        }
     }
 
     // MARK: - Misc Overrides

@@ -11,19 +11,21 @@ import UIKit
 extension ModuleViewController {
 
     func setup() {
+        canScrollAndZoom = true
+
         imageView.isOpaque = false
         imageView.contentMode = .redraw
 
         scrollView.addSubview(imageView)
+        contentView.addSubview(scrollView)
+        stackView.addArrangedSubview(contentView)
 
-        canvasView.addSubview(scrollView)
-        canvasView.layoutMarginsGuide.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        canvasView.layoutMarginsGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        canvasView.layoutMarginsGuide.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        canvasView.layoutMarginsGuide.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-
-        stackView.addArrangedSubview(canvasView)
+        contentView.layoutMarginsGuide.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
+        contentView.layoutMarginsGuide.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
+        contentView.layoutMarginsGuide.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.layoutMarginsGuide.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
 
         view.fill(with: stackView, activate: true)
+        view.clipsToBounds = true
     }
 }

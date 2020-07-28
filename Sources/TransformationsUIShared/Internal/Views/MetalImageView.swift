@@ -62,6 +62,7 @@ class MetalImageView: MTKView, CIImageView {
 
     override func draw(_ rect: CGRect) {
         guard let image = image, let currentDrawable = currentDrawable else { return }
+        guard drawableSize.width > 0, drawableSize.height > 0 else { return }
         guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return }
 
         let scaleX = drawableSize.width / image.extent.width

@@ -11,18 +11,32 @@ import UIKit
 open class ModuleViewController: ArrangeableViewController {
     // MARK: - Private Properties
 
-    private var imageViewImageObserver: NSKeyValueObservation?
-    private var lastViewFrame: CGRect? = nil
+    private var observers: [NSKeyValueObservation] = []
 
     // MARK: - Open Properties
 
-    open var zoomEnabled: Bool = false {
-        didSet { scrollView.bouncesZoom = zoomEnabled }
+    open weak var discardApplyDelegate: DiscardApplyToolbarDelegate?
+
+    open var zoomEnabled: Bool = true {
+        didSet {
+            if zoomEnabled {
+                recalculateMinAndMaxZoomScales()
+                addObservers()
+            } else {
+                removeObservers()
+                scrollView.minimumZoomScale = 1
+                scrollView.maximumZoomScale = 1
+            }
+        }
     }
 
-    open var contentLayoutMargins: NSDirectionalEdgeInsets {
-        get { canvasView.directionalLayoutMargins }
-        set { canvasView.directionalLayoutMargins = newValue }
+    open var canScrollAndZoom: Bool = true {
+        didSet {
+            DispatchQueue.main.async {
+                self.scrollView.panGestureRecognizer.isEnabled = self.canScrollAndZoom
+                self.scrollView.pinchGestureRecognizer?.isEnabled = self.canScrollAndZoom
+            }
+        }
     }
 
     open private(set) lazy var scrollView: CenteredScrollView = {
@@ -33,7 +47,6 @@ open class ModuleViewController: ArrangeableViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.delegate = self
         scrollView.clipsToBounds = false
-        scrollView.bouncesZoom = zoomEnabled
 
         return scrollView
     }()
@@ -41,36 +54,16 @@ open class ModuleViewController: ArrangeableViewController {
     open private(set) lazy var imageView: CIImageView = {
         let imageView = MetalImageView()
 
-        // Start observing changes in `image` property from `imageView`.
-        let observer = imageView.observe(\.image, options: [.new, .prior]) { imageView, change in
-            if change.isPrior {
-                // Notify that imageView's image is about to be updated.
-                (self as? EditorModuleVC)?.willUpdateImageView(imageView: imageView)
-            } else {
-                // Notify that imageView's image was just updated.
-                (self as? EditorModuleVC)?.didUpdateImageView(imageView: imageView)
-
-                // Recalculate scroll view's zoom scale if dimensions changed.
-                if change.oldValue??.extent != change.newValue??.extent {
-                    self.recalculateZoomScale()
-                }
-            }
-        }
-
-        // Keep a strong reference to observer
-        imageViewImageObserver = observer
-
         return imageView
     }()
 
     // MARK: - Public Properties
 
-    public let canvasView: UIView = {
+    public let contentView: UIView = {
         let view = UIView()
 
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
-        view.directionalLayoutMargins = Constants.Spacing.insetContentLayout
+        view.clipsToBounds = false
 
         return view
     }()
@@ -101,17 +94,15 @@ extension ModuleViewController {
         if let editorModuleVC = self as? EditorModuleVC {
             imageView.image = editorModuleVC.getRenderNode().pipeline?.outputImage
         }
+
+        addObservers()
+        recalculateMinAndMaxZoomScales()
     }
 
-    open override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    open override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
 
-        stackView.layoutIfNeeded()
-
-        if lastViewFrame != view.frame {
-            lastViewFrame = view.frame
-            recalculateZoomScale()
-        }
+        removeObservers()
     }
 }
 
@@ -126,7 +117,52 @@ extension ModuleViewController: UIScrollViewDelegate {
 // MARK: - Private Functions
 
 private extension ModuleViewController {
-    func recalculateZoomScale() {
+    func addObservers() {
+        removeObservers()
+
+        observers.append(view.observe(\.bounds, options: [.new, .old]) { (view, change) in
+            guard change.newValue?.size != change.oldValue?.size else { return }
+
+            DispatchQueue.main.async {
+                self.recalculateMinAndMaxZoomScales()
+                self.scrollView.zoomScale = self.scrollView.minimumZoomScale
+            }
+        })
+
+        observers.append(contentView.observe(\.bounds, options: [.new, .old]) { (view, change) in
+            guard change.newValue?.size != change.oldValue?.size else { return }
+
+            DispatchQueue.main.async { self.recalculateMinAndMaxZoomScales() }
+        })
+
+        // Start observing changes in `image` property from `imageView`.
+        if let metalImageView = imageView as? MetalImageView {
+            observers.append(metalImageView.observe(\.image, options: [.new, .old, .prior]) { imageView, change in
+                if change.isPrior {
+                    // Notify that imageView's image is about to be updated.
+                    (self as? EditorModuleVC)?.willUpdateImageView(imageView: imageView)
+                } else {
+                    // Notify that imageView's image was just updated.
+                    (self as? EditorModuleVC)?.didUpdateImageView(imageView: imageView)
+
+                    // Recalculate scroll view's zoom scale if dimensions changed.
+                    if change.oldValue??.extent.size != change.newValue??.extent.size {
+                        DispatchQueue.main.async {
+                            self.recalculateMinAndMaxZoomScales()
+                            self.scrollView.zoomScale = self.scrollView.minimumZoomScale
+                        }
+                    }
+                }
+            })
+        }
+    }
+
+    func removeObservers() {
+        observers.removeAll()
+    }
+
+    func recalculateMinAndMaxZoomScales() {
+        guard zoomEnabled else { return }
         guard let zoomedView = scrollView.delegate?.viewForZooming?(in: scrollView) else { return }
         guard scrollView.bounds.size != .zero && zoomedView.bounds.size != .zero else { return }
 
@@ -135,9 +171,6 @@ private extension ModuleViewController {
         let scale = min(scaleX, scaleY)
 
         scrollView.minimumZoomScale = scale
-        scrollView.maximumZoomScale = zoomEnabled ? .infinity : scale
-        scrollView.zoomScale = scale
-
-        scrollView.setNeedsLayout()
+        scrollView.maximumZoomScale = .infinity
     }
 }

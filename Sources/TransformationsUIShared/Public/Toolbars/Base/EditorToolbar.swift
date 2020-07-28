@@ -1,6 +1,6 @@
 //
 //  EditorToolbar.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 08/11/2019.
 //  Copyright © 2019 Filestack. All rights reserved.
@@ -13,15 +13,20 @@ open class EditorToolbar: ArrangeableToolbar {
 
     public let style: EditorToolbarStyle
 
+    // MARK: - Overridable Properties
+
+    open override var intrinsicContentSize: CGSize {
+        if let height = style.fixedHeight {
+            return CGSize(width: UIView.noIntrinsicMetric, height: height)
+        } else {
+            return CGSize(width: UIView.noIntrinsicMetric, height: UIView.noIntrinsicMetric)
+        }
+    }
+
     // MARK: - Overridable Functions
 
-    open func setItems(_ items: [UIView] = []) {
-        removeAllItems()
-
-        for item in items {
-            addItem(item)
-        }
-
+    open override func setItems(_ items: [UIView] = [], animated: Bool = false) {
+        super.setItems(items, animated: animated)
         setNeedsLayout()
     }
 
@@ -115,9 +120,5 @@ private extension EditorToolbar {
         spacing = style.itemSpacing
         axis = style.axis
         distribution = .equalCentering
-
-        if let shorterSide = style.fixedHeight {
-            heightAnchor.constraint(equalToConstant: shorterSide).isActive = true
-        }
     }
 }

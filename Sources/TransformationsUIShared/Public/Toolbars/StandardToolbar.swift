@@ -1,6 +1,6 @@
 //
 //  StandardToolbar.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 29/10/2019.
 //  Copyright © 2019 Filestack. All rights reserved.
@@ -66,7 +66,7 @@ public class StandardToolbar: EditorToolbar {
 
     // MARK: - Misc Overrides
 
-    public override func setItems(_ items: [UIView] = []) {
+    public override func setItems(_ items: [UIView] = [], animated: Bool = false) {
         innerToolbar = ArrangeableToolbar(items: items)
         innerToolbar.spacing = style.itemSpacing
 
@@ -75,7 +75,7 @@ public class StandardToolbar: EditorToolbar {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.fill(with: innerToolbar, activate: true)
 
-        super.setItems([scrollView])
+        super.setItems([scrollView], animated: animated)
     }
 }
 
@@ -88,9 +88,7 @@ private extension StandardToolbar {
         selectedItem = control
         let item = descriptibleItems[sender.tag]
 
-        delegate?.toolbarItemSelected(toolbar: self,
-                                      item: item,
-                                      control: control)
+        delegate?.toolbarItemSelected(toolbar: self, item: item, control: control)
     }
 }
 
@@ -99,18 +97,14 @@ private extension StandardToolbar {
 private extension StandardToolbar {
     func setup() {
         setItems(descriptibleItems.enumerated().compactMap {
-            guard let icon = $0.element.icon else { return nil }
+            guard let image = $0.element.icon else { return nil }
 
-            return touchableButton(titled: $0.element.title, image: icon, tag: $0.offset)
+            let button = self.button(using: $0.element.title, image: image)
+
+            button.addTarget(delegate, action: #selector(toolbarItemSelected), for: .touchUpInside)
+            button.tag = $0.offset
+
+            return button
         })
-    }
-
-    func touchableButton(titled title: String, image: UIImage, tag: Int) -> UIButton {
-        let button = self.button(using: title, image: image)
-
-        button.addTarget(delegate, action: #selector(toolbarItemSelected), for: .touchUpInside)
-        button.tag = tag
-
-        return button
     }
 }

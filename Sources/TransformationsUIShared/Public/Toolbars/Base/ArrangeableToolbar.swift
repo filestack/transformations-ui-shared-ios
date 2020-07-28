@@ -1,6 +1,6 @@
 //
 //  ArrangeableToolbar.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 07/11/2019.
 //  Copyright © 2019 Filestack. All rights reserved.
@@ -87,6 +87,38 @@ open class ArrangeableToolbar: UIView {
     public func removeAllItems() {
         for item in stackView.arrangedSubviews {
             removeItem(item)
+        }
+    }
+
+    public func setItems(_ items: [UIView] = [], animated: Bool = false) {
+        if animated {
+            removeAllItems()
+
+            for item in items {
+                item.alpha = 0
+                UIView.setAnimationsEnabled(false)
+                item.isHidden = true
+                self.addItem(item)
+                UIView.setAnimationsEnabled(true)
+            }
+
+            Constants.Animations.default(duration: 0.25, delay: 0.25) {
+                for item in items {
+                    item.alpha = 1
+                }
+            } completion: { _ in }
+
+            Constants.Animations.default(duration: 0.5) {
+                for item in items {
+                    item.isHidden = false
+                }
+            } completion: { _ in }
+        } else {
+            removeAllItems()
+
+            for item in items {
+                addItem(item)
+            }
         }
     }
 }

@@ -1,8 +1,9 @@
 //
 //  BoundedRangeCommandToolbar.swift
-//  
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 26/06/2020.
+//  Copyright © 2020 Filestack. All rights reserved.
 //
 
 import UIKit
@@ -152,7 +153,8 @@ private extension BoundedRangeCommandToolbar {
         // Keep a copy of our value labels and sliders so we can easily access them later by index.
         self.valueLabels = valueLabels
         self.sliders = sliders
+
         // Update items using the newly generated ones.
-        setItems(items)
+        setItems(items, animated: true)
     }
 }
