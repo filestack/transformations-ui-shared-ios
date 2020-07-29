@@ -97,6 +97,7 @@ extension ModuleViewController {
 
         addObservers()
         recalculateMinAndMaxZoomScales()
+        scrollView.zoomScale = scrollView.minimumZoomScale
     }
 
     open override func viewWillDisappear(_ animated: Bool) {
@@ -120,6 +121,7 @@ private extension ModuleViewController {
     func addObservers() {
         removeObservers()
 
+        // Typically happens when the device orientation changes.
         observers.append(view.observe(\.bounds, options: [.new, .old]) { (view, change) in
             guard change.newValue?.size != change.oldValue?.size else { return }
 
@@ -129,6 +131,7 @@ private extension ModuleViewController {
             }
         })
 
+        // Typically happens when an arranged view from the `stackView` is added, removed, or `isHidden` changes.
         observers.append(contentView.observe(\.bounds, options: [.new, .old]) { (view, change) in
             guard change.newValue?.size != change.oldValue?.size else { return }
 
