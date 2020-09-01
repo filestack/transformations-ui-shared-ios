@@ -1,9 +1,9 @@
-# Transformations UI
+# Transformations UI Shared
 
-Filestack's [Transformations UI](https://www.filestack.com/docs/concepts/transform_ui/) implementation for iOS and iPadOS devices.
+Filestack's [Transformations UI](https://www.filestack.com/docs/concepts/transform_ui/) shared codebase.
 
 ## Requirements
 
-* Xcode 11 or later
-* Swift 4.2 up to 5.1 / Objective-C
-* iOS 11 / iPadOS 13 or later
+* Xcode 12+
+* Swift 4.2+ / Objective-C
+* iOS 11.0+ / iPadOS 13.0+

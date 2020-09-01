@@ -13,7 +13,7 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(path: "../../frameworks/UberSegmentedControl"),
+        .package(url: "https://github.com/rnine/UberSegmentedControl.git", .upToNextMajor(from: "1.0.0")),
     ],
     targets: [
         .target(
