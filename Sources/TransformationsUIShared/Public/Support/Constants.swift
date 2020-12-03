@@ -1,6 +1,6 @@
 //
 //  Constants.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 11/11/2019.
 //  Copyright © 2019 Filestack. All rights reserved.
@@ -32,7 +32,7 @@ extension Constants.Size {
 extension Constants.Spacing {
     public static let toolbarItem: CGFloat = 6
     public static let toolbarInset: CGFloat = toolbarItem * 2
-    public static let insetContentLayout = NSDirectionalEdgeInsets(top: 5, leading: 40, bottom: 5, trailing: 40)
+    public static let insetContentLayout = NSDirectionalEdgeInsets(top: 40, leading: 40, bottom: 40, trailing: 40)
 }
 
 extension Constants.Color {

@@ -1,5 +1,5 @@
 //
-//  MetalImageView.swift
+//  CIImageView.swift
 //  TransformationsUI
 //
 //  Created by Ruben Nine on 22/10/2019.
@@ -10,10 +10,10 @@ import UIKit
 import MetalKit
 import CoreImage
 
-class MetalImageView: MTKView, CIImageView {
-    // MARK: - Internal Properties
+public class CIImageView: MTKView {
+    // MARK: - Public Properties
 
-    @objc dynamic var image: CIImage? {
+    @objc public dynamic var image: CIImage? {
         didSet {
             guard let image = image else { return }
 
@@ -60,7 +60,7 @@ class MetalImageView: MTKView, CIImageView {
 
     // MARK: - Draw Overrides
 
-    override func draw(_ rect: CGRect) {
+    public override func draw(_ rect: CGRect) {
         guard let image = image, let currentDrawable = currentDrawable else { return }
         guard drawableSize.width > 0, drawableSize.height > 0 else { return }
         guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return }

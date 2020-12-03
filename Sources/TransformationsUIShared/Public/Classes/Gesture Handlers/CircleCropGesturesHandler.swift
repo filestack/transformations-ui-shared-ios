@@ -1,15 +1,15 @@
 //
 //  CircleCropGesturesHandler.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Mihály Papp on 12/07/2018.
-//  Copyright © 2018 Mihály Papp. All rights reserved.
+//  Copyright © 2020 Filestack. All rights reserved.
 //
 
 import UIKit
 
 public protocol CircleCropGesturesHandlerDelegate: EditDataSource {
-    func updateCircle(_ center: CGPoint, radius: CGFloat)
+    func circleCropChanged(_ handler: CircleCropGesturesHandler)
 }
 
 public class CircleCropGesturesHandler {
@@ -53,18 +53,20 @@ public extension CircleCropGesturesHandler {
         }
     }
 
-    var actualCenter: CGPoint {
+    var actualEdgeInsets: UIEdgeInsets {
         guard let delegate = delegate else { return .zero }
 
-        let actualPoint = point(fromRelativeX: relativeCircle.centerX, relativeY: relativeCircle.centerY)
+        let croppedRect = CGRect(
+            origin: CGPoint(x: circleCenter.x - circleRadius, y: circleCenter.y - circleRadius),
+            size: CGSize(width: circleRadius * 2, height: circleRadius * 2)
+        )
 
-        return delegate.convertPointFromVirtualFrameToImageFrame(actualPoint)
-    }
+        let actualImageRect = delegate.convertRectFromVirtualFrameToImageFrame(croppedRect)
 
-    var actualRadius: CGFloat {
-        guard let delegate = delegate else { return .zero }
-
-        return shorterEdge * relativeCircle.radius * (1 / delegate.zoomScale)
+        return UIEdgeInsets(top: actualImageRect.minY - delegate.imageFrame.minY,
+                            left: actualImageRect.minX - delegate.imageFrame.minX,
+                            bottom: delegate.imageFrame.maxY - actualImageRect.maxY,
+                            right: delegate.imageFrame.maxX - actualImageRect.maxX)
     }
 
     func handlePanGesture(recognizer: UIPanGestureRecognizer, in targetView: UIView) {
@@ -152,7 +154,7 @@ private extension CircleCropGesturesHandler {
     }
 
     func sendUpdate() {
-        delegate?.updateCircle(actualCenter, radius: actualRadius)
+        delegate?.circleCropChanged(self)
     }
 }
 

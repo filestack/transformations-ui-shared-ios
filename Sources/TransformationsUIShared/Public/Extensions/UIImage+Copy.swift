@@ -1,6 +1,6 @@
 //
 //  UIImage+CIImageTransformations.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 7/4/19.
 //  Copyright © 2019 Filestack. All rights reserved.

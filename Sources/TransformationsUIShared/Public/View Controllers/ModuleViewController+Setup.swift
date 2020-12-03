@@ -13,10 +13,6 @@ extension ModuleViewController {
     func setup() {
         canScrollAndZoom = true
 
-        imageView.isOpaque = false
-        imageView.contentMode = .redraw
-
-        scrollView.addSubview(imageView)
         contentView.addSubview(scrollView)
         stackView.addArrangedSubview(contentView)
 

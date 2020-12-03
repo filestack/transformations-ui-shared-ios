@@ -1,6 +1,6 @@
 //
 //  CoreGraphics+Rounding.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 15/11/2019.
 //  Copyright © 2019 Filestack. All rights reserved.

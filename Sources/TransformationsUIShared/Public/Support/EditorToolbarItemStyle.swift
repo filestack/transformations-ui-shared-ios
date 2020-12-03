@@ -1,6 +1,6 @@
 //
 //  EditorToolbarItemStyle.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 25/06/2020.
 //  Copyright © 2020 Filestack. All rights reserved.

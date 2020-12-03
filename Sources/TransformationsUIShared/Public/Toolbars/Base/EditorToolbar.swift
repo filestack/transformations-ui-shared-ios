@@ -79,6 +79,7 @@ extension EditorToolbar {
         button.setImage(image, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: UIFont.smallSystemFontSize)
         button.setTitleColor(style.itemStyle.tintColor, for: .normal)
+        button.setTitleColor(style.itemStyle.tintColor?.withAlphaComponent(0.5), for: .disabled)
         button.setTitle(title, for: .normal)
         button.addTarget(self, action: #selector(delayedStopHighlighting), for: .touchUpInside)
 

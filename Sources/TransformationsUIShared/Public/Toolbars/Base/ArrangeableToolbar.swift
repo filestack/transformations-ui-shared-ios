@@ -47,7 +47,14 @@ open class ArrangeableToolbar: UIView {
 
     // MARK: - Private Properties
 
-    private lazy var stackView = UIStackView()
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+
+        return stackView
+    }()
+
     private var shouldSetupViews = true
     private var stackViewConstraints = [NSLayoutConstraint]()
 

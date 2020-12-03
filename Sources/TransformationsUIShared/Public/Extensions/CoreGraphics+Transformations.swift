@@ -1,6 +1,6 @@
 //
 //  CoreGraphics+Transformations.swift
-//  TransformationsUIPremium
+//  TransformationsUIShared
 //
 //  Created by Ruben Nine on 05/11/2019.
 //  Copyright © 2019 Filestack. All rights reserved.
@@ -51,5 +51,9 @@ public extension CGPoint {
 public extension CGSize {
     func adding(width: CGFloat = 0, height: CGFloat = 0) -> CGSize {
         return CGSize(width: self.width + width, height: self.height + height)
+    }
+
+    func scaledBy(x: CGFloat, y: CGFloat) -> CGSize {
+        return applying(CGAffineTransform(scaleX: x, y: y))
     }
 }

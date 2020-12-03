@@ -1,9 +1,9 @@
 //
 //  CircleCropLayer.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Mihály Papp on 12/07/2018.
-//  Copyright © 2018 Mihály Papp. All rights reserved.
+//  Copyright © 2020 Filestack. All rights reserved.
 //
 
 import UIKit

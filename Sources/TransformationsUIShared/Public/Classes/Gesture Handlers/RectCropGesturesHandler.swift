@@ -1,16 +1,16 @@
 //
 //  RectCropGesturesHandler.swift
-//  TransformationsUI
+//  TransformationsUIShared
 //
 //  Created by Mihály Papp on 12/07/2018.
-//  Copyright © 2018 Mihály Papp. All rights reserved.
+//  Copyright © 2020 Filestack. All rights reserved.
 //
 
 import UIKit
 import AVFoundation.AVUtilities
 
 public protocol RectCropGesturesHandlerDelegate: EditDataSource {
-    func updateCropInset(_ inset: UIEdgeInsets)
+    func rectCropChanged(_ handler: RectCropGesturesHandler)
 }
 
 public class RectCropGesturesHandler {
@@ -105,7 +105,7 @@ private extension RectCropGesturesHandler {
 
         set {
             relativeCropInsets = relativeInsets(from: newValue)
-            delegate?.updateCropInset(newValue)
+            delegate?.rectCropChanged(self)
         }
     }
 
