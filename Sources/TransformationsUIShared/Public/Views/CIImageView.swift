@@ -91,7 +91,12 @@ public class CIImageView: MTKView {
             try ciContext.startTask(toClear: destination)
             try ciContext.startTask(toRender: centered, to: destination)
 
+            #if targetEnvironment(simulator)
             commandBuffer.present(currentDrawable)
+            #else
+            commandBuffer.present(currentDrawable, afterMinimumDuration: 1 / CFTimeInterval(preferredFramesPerSecond))
+            #endif
+
             commandBuffer.commit()
             commandBuffer.waitUntilCompleted()
         } catch {
