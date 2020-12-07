@@ -8,6 +8,15 @@
 
 import UIKit
 
+/// Represents a render node that may be used in a `RenderPipeline`.
+open class RenderNode: PointerHashable {
+    public let uuid: UUID
+
+    public required init(uuid: UUID? = nil) {
+        self.uuid = uuid ?? UUID()
+    }
+}
+
 /// An object describing a render node change.
 public protocol RenderNodeChange: Any {}
 
@@ -24,13 +33,6 @@ public protocol RenderNodeDelegate: class {
     ///
     /// Use it to perform an action (e.g. registering an undo step) after the node finishes changing.
     func nodeFinishedChanging(node: RenderNode, change: RenderNodeChange?)
-}
-
-/// Represents a render node that may be used in a `RenderPipeline`.
-public protocol RenderNode: NSObject {
-    var uuid: UUID { get }
-
-    init(uuid: UUID)
 }
 
 /// A specific kind of `RenderNode` that can contain other nodes and conforms to `RenderNodeDelegate`.
@@ -74,12 +76,4 @@ public protocol ObjectRenderNode: RenderGroupChildNode & ViewableNode {
     var center: CGPoint { get set }
     var bounds: CGRect { get set }
     var transform: CGAffineTransform { get set }
-}
-
-public func ==(lhs: RenderNode, rhs: RenderNode) -> Bool {
-    return lhs.hash == rhs.hash
-}
-
-public func !=(lhs: RenderNode, rhs: RenderNode) -> Bool {
-    return lhs.hash != rhs.hash
 }

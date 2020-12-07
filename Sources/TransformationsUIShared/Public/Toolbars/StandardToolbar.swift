@@ -81,7 +81,7 @@ public class StandardToolbar: EditorToolbar {
 
 public extension StandardToolbar {
     func setEnabled(item: DescriptibleEditorItem, enabled: Bool) {
-        guard let idx = (descriptibleItems.firstIndex { $0 == item }) else { return }
+        guard let idx = (descriptibleItems.firstIndex { $0 === item }) else { return }
 
         (items[idx] as? UIButton)?.isEnabled = enabled
     }
