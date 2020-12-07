@@ -93,6 +93,7 @@ public class CIImageView: MTKView {
 
             commandBuffer.present(currentDrawable)
             commandBuffer.commit()
+            commandBuffer.waitUntilCompleted()
         } catch {
             print("ERROR: Unable to render image in CoreImage context: \(error.localizedDescription)")
         }
