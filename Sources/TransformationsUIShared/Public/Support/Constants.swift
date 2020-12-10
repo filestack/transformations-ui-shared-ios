@@ -27,6 +27,7 @@ extension Constants.Size {
     public static let toolbarItem = CGSize(width: 60, height: 60)
     public static let wideToolbarItem = CGSize(width: 80, height: 60)
     public static let toolbarIcon = CGSize(width: 44, height: 44)
+    public static let maxImageInputSize = CGSize(width: 8192, height: 8192)
 }
 
 extension Constants.Spacing {
