@@ -67,16 +67,14 @@ public class CIImageView: MTKView {
     // MARK: - Draw Overrides
 
     public override func draw(_ rect: CGRect) {
-        guard let image = image, let currentDrawable = currentDrawable else { return }
-        guard drawableSize.width > 0, drawableSize.height > 0 else { return }
-        guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return }
-
-        // Centered image
-        let centeredImage = image
-            .transformed(by: CGAffineTransform(translationX: (drawableSize.width - image.extent.width) / 2,
-                                               y: (drawableSize.height - image.extent.height) / 2))
-            .transformed(by: CGAffineTransform(translationX: -image.extent.origin.x,
-                                               y: -image.extent.origin.y))
+        guard
+            drawableSize.width > 0, drawableSize.height > 0,
+            let image = image,
+            let commandBuffer = commandQueue?.makeCommandBuffer(),
+            let currentDrawable = currentDrawable
+        else {
+            return
+        }
 
         let destination = CIRenderDestination(width: Int(drawableSize.width),
             height: Int(drawableSize.height),
@@ -85,19 +83,15 @@ public class CIImageView: MTKView {
             mtlTextureProvider: { currentDrawable.texture }
         )
 
-        do {
-            try ciContext.startTask(toRender: centeredImage, to: destination)
+        _ = try? ciContext.startTask(toRender: image, from: image.extent, to: destination, at: .zero)
 
-            #if targetEnvironment(simulator)
-            commandBuffer.present(currentDrawable)
-            #else
-            commandBuffer.present(currentDrawable, afterMinimumDuration: 1 / CFTimeInterval(preferredFramesPerSecond))
-            #endif
+        #if targetEnvironment(simulator)
+        commandBuffer.present(currentDrawable)
+        #else
+        commandBuffer.present(currentDrawable, afterMinimumDuration: 1 / CFTimeInterval(preferredFramesPerSecond))
+        #endif
 
-            commandBuffer.commit()
-            commandBuffer.waitUntilCompleted()
-        } catch {
-            print("ERROR: Unable to render image in CoreImage context: \(error.localizedDescription)")
-        }
+        commandBuffer.commit()
+        commandBuffer.waitUntilCompleted()
     }
 }
