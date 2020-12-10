@@ -20,6 +20,10 @@ public class CIImageView: MTKView {
             bounds = CGRect(origin: .zero, size: image.extent.size)
             frame = CGRect(origin: .zero, size: frame.size)
 
+            if drawableSize != image.extent.size {
+                drawableSize = image.extent.size
+            }
+
             setNeedsDisplay()
         }
     }
@@ -49,6 +53,8 @@ public class CIImageView: MTKView {
             fatalError("Device doesn't support Metal")
         }
 
+        contentScaleFactor = 1
+        autoResizeDrawable = false
         isPaused = true
         enableSetNeedsDisplay = true
         framebufferOnly = false
@@ -65,20 +71,12 @@ public class CIImageView: MTKView {
         guard drawableSize.width > 0, drawableSize.height > 0 else { return }
         guard let commandBuffer = commandQueue?.makeCommandBuffer() else { return }
 
-        let scaleX = drawableSize.width / image.extent.width
-        let scaleY = drawableSize.height / image.extent.height
-        let scale = min(scaleX, scaleY)
-
-        // Scaled image
-        let scaled = image
-            .transformed(by: CGAffineTransform(scaleX: scale, y: scale))
-
-        // Centered scaled image
-        let centered = scaled
-            .transformed(by: CGAffineTransform(translationX: (drawableSize.width - scaled.extent.width) / 2,
-                                               y: (drawableSize.height - scaled.extent.height) / 2))
-            .transformed(by: CGAffineTransform(translationX: -scaled.extent.origin.x,
-                                               y: -scaled.extent.origin.y))
+        // Centered image
+        let centeredImage = image
+            .transformed(by: CGAffineTransform(translationX: (drawableSize.width - image.extent.width) / 2,
+                                               y: (drawableSize.height - image.extent.height) / 2))
+            .transformed(by: CGAffineTransform(translationX: -image.extent.origin.x,
+                                               y: -image.extent.origin.y))
 
         let destination = CIRenderDestination(width: Int(drawableSize.width),
             height: Int(drawableSize.height),
@@ -88,8 +86,7 @@ public class CIImageView: MTKView {
         )
 
         do {
-            try ciContext.startTask(toClear: destination)
-            try ciContext.startTask(toRender: centered, to: destination)
+            try ciContext.startTask(toRender: centeredImage, to: destination)
 
             #if targetEnvironment(simulator)
             commandBuffer.present(currentDrawable)
