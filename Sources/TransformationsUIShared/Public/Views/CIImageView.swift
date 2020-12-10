@@ -13,7 +13,7 @@ import CoreImage
 public class CIImageView: MTKView {
     // MARK: - Public Properties
 
-    @objc public dynamic var image: CIImage? {
+    @objc public dynamic weak var image: CIImage? {
         didSet {
             guard let image = image else { return }
 
@@ -46,8 +46,8 @@ public class CIImageView: MTKView {
 
     // MARK: - Lifecycle
 
-    override init(frame frameRect: CGRect, device: MTLDevice?) {
-        super.init(frame: frameRect, device: device ?? MTLCreateSystemDefaultDevice())
+    public override init(frame frameRect: CGRect, device: MTLDevice?) {
+        super.init(frame: frameRect, device: device)
 
         guard super.device != nil else {
             fatalError("Device doesn't support Metal")
@@ -76,12 +76,7 @@ public class CIImageView: MTKView {
             return
         }
 
-        let destination = CIRenderDestination(width: Int(drawableSize.width),
-            height: Int(drawableSize.height),
-            pixelFormat: colorPixelFormat,
-            commandBuffer: commandBuffer,
-            mtlTextureProvider: { currentDrawable.texture }
-        )
+        let destination = CIRenderDestination(mtlTexture: currentDrawable.texture, commandBuffer: commandBuffer)
 
         _ = try? ciContext.startTask(toRender: image, from: image.extent, to: destination, at: .zero)
 
