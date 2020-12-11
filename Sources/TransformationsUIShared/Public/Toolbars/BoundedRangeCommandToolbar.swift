@@ -59,10 +59,7 @@ public extension BoundedRangeCommandToolbar {
 private extension BoundedRangeCommandToolbar {
     @objc func sliderChanged(_ sender: UISlider) {
         delegate?.toolbarSliderChanged(slider: sender, for: command)
-
-        DispatchQueue.main.async {
-            self.updateValueLabel(for: sender)
-        }
+        updateValueLabel(for: sender)
     }
 
     @objc func sliderFinishedChanging(_ sender: UISlider) {
