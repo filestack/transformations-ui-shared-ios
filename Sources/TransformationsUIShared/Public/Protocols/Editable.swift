@@ -9,8 +9,6 @@
 import Foundation
 
 public protocol Editable {
-    var isEditing: Bool { get }
-
     func applyEditing()
     func cancelEditing()
 }
