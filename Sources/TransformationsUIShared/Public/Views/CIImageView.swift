@@ -37,10 +37,12 @@ public class CIImageView: MTKView {
     }()
 
     private lazy var ciContext: CIContext = {
+        let contextOptions: [CIContextOption : Any] = [.workingFormat : CIFormat.RGBA8]
+
         if #available(iOS 13.0, *) {
-            return CIContext(mtlCommandQueue: commandQueue!)
+            return CIContext(mtlCommandQueue: commandQueue!, options: contextOptions)
         } else {
-            return CIContext(mtlDevice: device!)
+            return CIContext(mtlDevice: device!, options: contextOptions)
         }
     }()
 
