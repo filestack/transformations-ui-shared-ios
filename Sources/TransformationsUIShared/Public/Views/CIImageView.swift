@@ -30,8 +30,6 @@ public class CIImageView: MTKView {
 
     // MARK: - Private Properties
 
-    private let colorSpace = CGColorSpaceCreateDeviceRGB()
-
     private lazy var commandQueue: MTLCommandQueue? = {
         return device!.makeCommandQueue()
     }()
@@ -79,6 +77,8 @@ public class CIImageView: MTKView {
         }
 
         let destination = CIRenderDestination(mtlTexture: currentDrawable.texture, commandBuffer: commandBuffer)
+
+        destination.isFlipped = true
 
         _ = try? ciContext.startTask(toRender: image, from: image.extent, to: destination, at: .zero)
 
