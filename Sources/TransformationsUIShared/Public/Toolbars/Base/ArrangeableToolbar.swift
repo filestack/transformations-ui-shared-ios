@@ -99,27 +99,25 @@ open class ArrangeableToolbar: UIView {
 
     public func setItems(_ items: [UIView] = [], animated: Bool = false) {
         if animated {
-            removeAllItems()
+            UIView.performWithoutAnimation {
+                removeAllItems()
+                alpha = 0
 
-            for item in items {
-                item.alpha = 0
-                UIView.setAnimationsEnabled(false)
-                item.isHidden = true
-                self.addItem(item)
-                UIView.setAnimationsEnabled(true)
+                for item in items {
+                    item.isHidden = true
+                    addItem(item)
+                }
             }
 
-            Constants.Animations.default(duration: 0.25, delay: 0.25) {
-                for item in items {
-                    item.alpha = 1
-                }
-            } completion: { _ in }
-
-            Constants.Animations.default(duration: 0.5) {
+            Constants.Animations.default(duration: 0.25, delay: 0) {
                 for item in items {
                     item.isHidden = false
                 }
-            } completion: { _ in }
+            } completion: { completed in
+                Constants.Animations.default(duration: 0.125) {
+                    self.alpha = 1
+                }
+            }
         } else {
             removeAllItems()
 
