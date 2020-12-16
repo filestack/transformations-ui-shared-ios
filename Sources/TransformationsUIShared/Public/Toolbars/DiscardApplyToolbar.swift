@@ -9,8 +9,8 @@
 import UIKit
 
 @objc public protocol DiscardApplyToolbarDelegate: class {
-    func applySelected(sender: UIButton)
-    func discardSelected(sender: UIButton)
+    func applySelected(sender: UIButton?)
+    func discardSelected(sender: UIButton?)
 }
 
 public class DiscardApplyToolbar: EditorToolbar {
