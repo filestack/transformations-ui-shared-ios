@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45C0105A258B6BD10057500D /* Math+Clamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01023258B6BD10057500D /* Math+Clamp.swift */; };
+		45C0105B258B6BD10057500D /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01024258B6BD10057500D /* Bundle.swift */; };
+		45C0105C258B6BD10057500D /* CircleCropLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01028258B6BD10057500D /* CircleCropLayer.swift */; };
+		45C0105D258B6BD10057500D /* RectCropLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01029258B6BD10057500D /* RectCropLayer.swift */; };
+		45C0105E258B6BD10057500D /* RectCropGesturesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0102B258B6BD10057500D /* RectCropGesturesHandler.swift */; };
+		45C0105F258B6BD10057500D /* CircleCropGesturesHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0102C258B6BD10057500D /* CircleCropGesturesHandler.swift */; };
+		45C01060258B6BD10057500D /* ModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0102E258B6BD10057500D /* ModuleViewController.swift */; };
+		45C01061258B6BD10057500D /* ModuleViewController+Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0102F258B6BD10057500D /* ModuleViewController+Setup.swift */; };
+		45C01062258B6BD10057500D /* UIGeometry+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01031258B6BD10057500D /* UIGeometry+Extras.swift */; };
+		45C01063258B6BD10057500D /* CoreGraphics+Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01032258B6BD10057500D /* CoreGraphics+Transformations.swift */; };
+		45C01064258B6BD10057500D /* UIImage+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01033258B6BD10057500D /* UIImage+Bundle.swift */; };
+		45C01065258B6BD10057500D /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01034258B6BD10057500D /* UIView+Constraints.swift */; };
+		45C01066258B6BD10057500D /* UIColor+Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01035258B6BD10057500D /* UIColor+Bundle.swift */; };
+		45C01067258B6BD10057500D /* CGPoint+Distance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01036258B6BD10057500D /* CGPoint+Distance.swift */; };
+		45C01068258B6BD10057500D /* CoreGraphics+Rounding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01037258B6BD10057500D /* CoreGraphics+Rounding.swift */; };
+		45C01069258B6BD10057500D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01039258B6BD10057500D /* Constants.swift */; };
+		45C0106A258B6BD10057500D /* EditorToolbarItemStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0103A258B6BD10057500D /* EditorToolbarItemStyle.swift */; };
+		45C0106B258B6BD10057500D /* L18.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0103B258B6BD10057500D /* L18.swift */; };
+		45C0106C258B6BD10057500D /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0103C258B6BD10057500D /* Styles.swift */; };
+		45C0106D258B6BD10057500D /* EditorToolbarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0103D258B6BD10057500D /* EditorToolbarStyle.swift */; };
+		45C0106E258B6BD10057500D /* RenderNodeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0103E258B6BD10057500D /* RenderNodeCategory.swift */; };
+		45C0106F258B6BD10057500D /* StandardToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01040258B6BD10057500D /* StandardToolbar.swift */; };
+		45C01070258B6BD10057500D /* SegmentedControlToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01041258B6BD10057500D /* SegmentedControlToolbar.swift */; };
+		45C01071258B6BD10057500D /* DiscardApplyToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01042258B6BD10057500D /* DiscardApplyToolbar.swift */; };
+		45C01072258B6BD10057500D /* BoundedRangeCommandToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01043258B6BD10057500D /* BoundedRangeCommandToolbar.swift */; };
+		45C01073258B6BD10057500D /* EditorToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01045258B6BD10057500D /* EditorToolbar.swift */; };
+		45C01074258B6BD10057500D /* ArrangeableToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01046258B6BD10057500D /* ArrangeableToolbar.swift */; };
+		45C01075258B6BD10057500D /* TitledImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01048258B6BD10057500D /* TitledImageButton.swift */; };
+		45C01076258B6BD10057500D /* CIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01049258B6BD10057500D /* CIImageView.swift */; };
+		45C01077258B6BD10057500D /* CenteredScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0104A258B6BD10057500D /* CenteredScrollView.swift */; };
+		45C01078258B6BD10057500D /* ToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0104B258B6BD10057500D /* ToolbarButton.swift */; };
+		45C01079258B6BD10057500D /* ToolbarScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0104C258B6BD10057500D /* ToolbarScrollView.swift */; };
+		45C0107A258B6BD10057500D /* VisualFXWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0104D258B6BD10057500D /* VisualFXWrapperView.swift */; };
+		45C0107B258B6BD10057500D /* RenderNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C0104F258B6BD10057500D /* RenderNode.swift */; };
+		45C0107C258B6BD10057500D /* Snapshotable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01050258B6BD10057500D /* Snapshotable.swift */; };
+		45C0107D258B6BD10057500D /* EditorModuleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01051258B6BD10057500D /* EditorModuleController.swift */; };
+		45C0107E258B6BD10057500D /* Editable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01052258B6BD10057500D /* Editable.swift */; };
+		45C0107F258B6BD10057500D /* PointerHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01053258B6BD10057500D /* PointerHashable.swift */; };
+		45C01080258B6BD10057500D /* DescriptibleEditorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01054258B6BD10057500D /* DescriptibleEditorItem.swift */; };
+		45C01081258B6BD10057500D /* EditorModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01055258B6BD10057500D /* EditorModule.swift */; };
+		45C01082258B6BD10057500D /* EditorModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01056258B6BD10057500D /* EditorModules.swift */; };
+		45C01083258B6BD10057500D /* BoundedRangeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01057258B6BD10057500D /* BoundedRangeCommand.swift */; };
+		45C01084258B6BD10057500D /* EditDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01058258B6BD10057500D /* EditDataSource.swift */; };
+		45C01085258B6BD10057500D /* EditorModuleCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C01059258B6BD10057500D /* EditorModuleCommand.swift */; };
+		OBJ_143 /* UberSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "UberSegmentedControl::UberSegmentedControl::Product" /* UberSegmentedControl.framework */; };
+		OBJ_156 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* Constants.swift */; };
+		OBJ_157 /* DividerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* DividerView.swift */; };
+		OBJ_158 /* SegmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* SegmentButton.swift */; };
+		OBJ_159 /* StackViewGestureHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* StackViewGestureHandler.swift */; };
+		OBJ_160 /* UIView+fill.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* UIView+fill.swift */; };
+		OBJ_161 /* UberSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* UberSegmentedControl.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4521969A25090696008C0907 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "UberSegmentedControl::UberSegmentedControl";
+			remoteInfo = UberSegmentedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		45C0101B258B6BD10057500D /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		45C0101C258B6BD10057500D /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		45C0101D258B6BD10057500D /* ModuleIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ModuleIcons.xcassets; sourceTree = "<group>"; };
+		45C0101E258B6BD10057500D /* TransformIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TransformIcons.xcassets; sourceTree = "<group>"; };
+		45C0101F258B6BD10057500D /* TextModuleIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TextModuleIcons.xcassets; sourceTree = "<group>"; };
+		45C01020258B6BD10057500D /* ObjectIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ObjectIcons.xcassets; sourceTree = "<group>"; };
+		45C01023258B6BD10057500D /* Math+Clamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Math+Clamp.swift"; sourceTree = "<group>"; };
+		45C01024258B6BD10057500D /* Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		45C01028258B6BD10057500D /* CircleCropLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropLayer.swift; sourceTree = "<group>"; };
+		45C01029258B6BD10057500D /* RectCropLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectCropLayer.swift; sourceTree = "<group>"; };
+		45C0102B258B6BD10057500D /* RectCropGesturesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectCropGesturesHandler.swift; sourceTree = "<group>"; };
+		45C0102C258B6BD10057500D /* CircleCropGesturesHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleCropGesturesHandler.swift; sourceTree = "<group>"; };
+		45C0102E258B6BD10057500D /* ModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModuleViewController.swift; sourceTree = "<group>"; };
+		45C0102F258B6BD10057500D /* ModuleViewController+Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ModuleViewController+Setup.swift"; sourceTree = "<group>"; };
+		45C01031258B6BD10057500D /* UIGeometry+Extras.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIGeometry+Extras.swift"; sourceTree = "<group>"; };
+		45C01032258B6BD10057500D /* CoreGraphics+Transformations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Transformations.swift"; sourceTree = "<group>"; };
+		45C01033258B6BD10057500D /* UIImage+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Bundle.swift"; sourceTree = "<group>"; };
+		45C01034258B6BD10057500D /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		45C01035258B6BD10057500D /* UIColor+Bundle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Bundle.swift"; sourceTree = "<group>"; };
+		45C01036258B6BD10057500D /* CGPoint+Distance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Distance.swift"; sourceTree = "<group>"; };
+		45C01037258B6BD10057500D /* CoreGraphics+Rounding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoreGraphics+Rounding.swift"; sourceTree = "<group>"; };
+		45C01039258B6BD10057500D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		45C0103A258B6BD10057500D /* EditorToolbarItemStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorToolbarItemStyle.swift; sourceTree = "<group>"; };
+		45C0103B258B6BD10057500D /* L18.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L18.swift; sourceTree = "<group>"; };
+		45C0103C258B6BD10057500D /* Styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
+		45C0103D258B6BD10057500D /* EditorToolbarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorToolbarStyle.swift; sourceTree = "<group>"; };
+		45C0103E258B6BD10057500D /* RenderNodeCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderNodeCategory.swift; sourceTree = "<group>"; };
+		45C01040258B6BD10057500D /* StandardToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StandardToolbar.swift; sourceTree = "<group>"; };
+		45C01041258B6BD10057500D /* SegmentedControlToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegmentedControlToolbar.swift; sourceTree = "<group>"; };
+		45C01042258B6BD10057500D /* DiscardApplyToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscardApplyToolbar.swift; sourceTree = "<group>"; };
+		45C01043258B6BD10057500D /* BoundedRangeCommandToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundedRangeCommandToolbar.swift; sourceTree = "<group>"; };
+		45C01045258B6BD10057500D /* EditorToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorToolbar.swift; sourceTree = "<group>"; };
+		45C01046258B6BD10057500D /* ArrangeableToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrangeableToolbar.swift; sourceTree = "<group>"; };
+		45C01048258B6BD10057500D /* TitledImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitledImageButton.swift; sourceTree = "<group>"; };
+		45C01049258B6BD10057500D /* CIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIImageView.swift; sourceTree = "<group>"; };
+		45C0104A258B6BD10057500D /* CenteredScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenteredScrollView.swift; sourceTree = "<group>"; };
+		45C0104B258B6BD10057500D /* ToolbarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarButton.swift; sourceTree = "<group>"; };
+		45C0104C258B6BD10057500D /* ToolbarScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarScrollView.swift; sourceTree = "<group>"; };
+		45C0104D258B6BD10057500D /* VisualFXWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualFXWrapperView.swift; sourceTree = "<group>"; };
+		45C0104F258B6BD10057500D /* RenderNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderNode.swift; sourceTree = "<group>"; };
+		45C01050258B6BD10057500D /* Snapshotable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snapshotable.swift; sourceTree = "<group>"; };
+		45C01051258B6BD10057500D /* EditorModuleController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorModuleController.swift; sourceTree = "<group>"; };
+		45C01052258B6BD10057500D /* Editable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editable.swift; sourceTree = "<group>"; };
+		45C01053258B6BD10057500D /* PointerHashable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointerHashable.swift; sourceTree = "<group>"; };
+		45C01054258B6BD10057500D /* DescriptibleEditorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptibleEditorItem.swift; sourceTree = "<group>"; };
+		45C01055258B6BD10057500D /* EditorModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorModule.swift; sourceTree = "<group>"; };
+		45C01056258B6BD10057500D /* EditorModules.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorModules.swift; sourceTree = "<group>"; };
+		45C01057258B6BD10057500D /* BoundedRangeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoundedRangeCommand.swift; sourceTree = "<group>"; };
+		45C01058258B6BD10057500D /* EditDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDataSource.swift; sourceTree = "<group>"; };
+		45C01059258B6BD10057500D /* EditorModuleCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditorModuleCommand.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_76 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		OBJ_77 /* DividerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerView.swift; sourceTree = "<group>"; };
+		OBJ_78 /* SegmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentButton.swift; sourceTree = "<group>"; };
+		OBJ_79 /* StackViewGestureHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewGestureHandler.swift; sourceTree = "<group>"; };
+		OBJ_80 /* UIView+fill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+fill.swift"; sourceTree = "<group>"; };
+		OBJ_82 /* UberSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberSegmentedControl.swift; sourceTree = "<group>"; };
+		OBJ_83 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/ruben/src/filestack/transformations-ui-shared-ios/.build/checkouts/UberSegmentedControl/Package.swift"; sourceTree = "<group>"; };
+		OBJ_88 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		"TransformationsUIShared::TransformationsUIShared::Product" /* TransformationsUIShared.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TransformationsUIShared.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"UberSegmentedControl::UberSegmentedControl::Product" /* UberSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UberSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_142 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_143 /* UberSegmentedControl.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_162 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		45C01019258B6BD10057500D /* TransformationsUIShared */ = {
+			isa = PBXGroup;
+			children = (
+				45C0101A258B6BD10057500D /* Resources */,
+				45C01021258B6BD10057500D /* Internal */,
+				45C01025258B6BD10057500D /* Public */,
+			);
+			name = TransformationsUIShared;
+			path = Sources/TransformationsUIShared;
+			sourceTree = "<group>";
+		};
+		45C0101A258B6BD10057500D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45C0101B258B6BD10057500D /* Colors.xcassets */,
+				45C0101C258B6BD10057500D /* Icons.xcassets */,
+				45C0101D258B6BD10057500D /* ModuleIcons.xcassets */,
+				45C0101E258B6BD10057500D /* TransformIcons.xcassets */,
+				45C0101F258B6BD10057500D /* TextModuleIcons.xcassets */,
+				45C01020258B6BD10057500D /* ObjectIcons.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45C01021258B6BD10057500D /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				45C01022258B6BD10057500D /* Extensions */,
+				45C01024258B6BD10057500D /* Bundle.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		45C01022258B6BD10057500D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45C01023258B6BD10057500D /* Math+Clamp.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45C01025258B6BD10057500D /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				45C01026258B6BD10057500D /* Classes */,
+				45C0102D258B6BD10057500D /* View Controllers */,
+				45C01030258B6BD10057500D /* Extensions */,
+				45C01038258B6BD10057500D /* Support */,
+				45C0103F258B6BD10057500D /* Toolbars */,
+				45C01047258B6BD10057500D /* Views */,
+				45C0104E258B6BD10057500D /* Protocols */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		45C01026258B6BD10057500D /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				45C01027258B6BD10057500D /* Layers */,
+				45C0102A258B6BD10057500D /* Gesture Handlers */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		45C01027258B6BD10057500D /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				45C01028258B6BD10057500D /* CircleCropLayer.swift */,
+				45C01029258B6BD10057500D /* RectCropLayer.swift */,
+			);
+			path = Layers;
+			sourceTree = "<group>";
+		};
+		45C0102A258B6BD10057500D /* Gesture Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				45C0102B258B6BD10057500D /* RectCropGesturesHandler.swift */,
+				45C0102C258B6BD10057500D /* CircleCropGesturesHandler.swift */,
+			);
+			path = "Gesture Handlers";
+			sourceTree = "<group>";
+		};
+		45C0102D258B6BD10057500D /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				45C0102E258B6BD10057500D /* ModuleViewController.swift */,
+				45C0102F258B6BD10057500D /* ModuleViewController+Setup.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		45C01030258B6BD10057500D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				45C01031258B6BD10057500D /* UIGeometry+Extras.swift */,
+				45C01032258B6BD10057500D /* CoreGraphics+Transformations.swift */,
+				45C01033258B6BD10057500D /* UIImage+Bundle.swift */,
+				45C01034258B6BD10057500D /* UIView+Constraints.swift */,
+				45C01035258B6BD10057500D /* UIColor+Bundle.swift */,
+				45C01036258B6BD10057500D /* CGPoint+Distance.swift */,
+				45C01037258B6BD10057500D /* CoreGraphics+Rounding.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		45C01038258B6BD10057500D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				45C01039258B6BD10057500D /* Constants.swift */,
+				45C0103A258B6BD10057500D /* EditorToolbarItemStyle.swift */,
+				45C0103B258B6BD10057500D /* L18.swift */,
+				45C0103C258B6BD10057500D /* Styles.swift */,
+				45C0103D258B6BD10057500D /* EditorToolbarStyle.swift */,
+				45C0103E258B6BD10057500D /* RenderNodeCategory.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		45C0103F258B6BD10057500D /* Toolbars */ = {
+			isa = PBXGroup;
+			children = (
+				45C01040258B6BD10057500D /* StandardToolbar.swift */,
+				45C01041258B6BD10057500D /* SegmentedControlToolbar.swift */,
+				45C01042258B6BD10057500D /* DiscardApplyToolbar.swift */,
+				45C01043258B6BD10057500D /* BoundedRangeCommandToolbar.swift */,
+				45C01044258B6BD10057500D /* Base */,
+			);
+			path = Toolbars;
+			sourceTree = "<group>";
+		};
+		45C01044258B6BD10057500D /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				45C01045258B6BD10057500D /* EditorToolbar.swift */,
+				45C01046258B6BD10057500D /* ArrangeableToolbar.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		45C01047258B6BD10057500D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				45C01048258B6BD10057500D /* TitledImageButton.swift */,
+				45C01049258B6BD10057500D /* CIImageView.swift */,
+				45C0104A258B6BD10057500D /* CenteredScrollView.swift */,
+				45C0104B258B6BD10057500D /* ToolbarButton.swift */,
+				45C0104C258B6BD10057500D /* ToolbarScrollView.swift */,
+				45C0104D258B6BD10057500D /* VisualFXWrapperView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		45C0104E258B6BD10057500D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				45C0104F258B6BD10057500D /* RenderNode.swift */,
+				45C01050258B6BD10057500D /* Snapshotable.swift */,
+				45C01051258B6BD10057500D /* EditorModuleController.swift */,
+				45C01052258B6BD10057500D /* Editable.swift */,
+				45C01053258B6BD10057500D /* PointerHashable.swift */,
+				45C01054258B6BD10057500D /* DescriptibleEditorItem.swift */,
+				45C01055258B6BD10057500D /* EditorModule.swift */,
+				45C01056258B6BD10057500D /* EditorModules.swift */,
+				45C01057258B6BD10057500D /* BoundedRangeCommand.swift */,
+				45C01058258B6BD10057500D /* EditDataSource.swift */,
+				45C01059258B6BD10057500D /* EditorModuleCommand.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_71 /* Tests */,
+				OBJ_72 /* Dependencies */,
+				OBJ_84 /* Products */,
+				OBJ_88 /* README.md */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				45C01019258B6BD10057500D /* TransformationsUIShared */,
+			);
+			name = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_71 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Tests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_72 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_73 /* UberSegmentedControl 1.3.2 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_73 /* UberSegmentedControl 1.3.2 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_74 /* UberSegmentedControl */,
+				OBJ_83 /* Package.swift */,
+			);
+			name = "UberSegmentedControl 1.3.2";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_74 /* UberSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_75 /* Internal */,
+				OBJ_81 /* Public */,
+			);
+			name = UberSegmentedControl;
+			path = .build/checkouts/UberSegmentedControl/Sources/UberSegmentedControl;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_75 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_76 /* Constants.swift */,
+				OBJ_77 /* DividerView.swift */,
+				OBJ_78 /* SegmentButton.swift */,
+				OBJ_79 /* StackViewGestureHandler.swift */,
+				OBJ_80 /* UIView+fill.swift */,
+			);
+			path = Internal;
+			sourceTree = "<group>";
+		};
+		OBJ_81 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_82 /* UberSegmentedControl.swift */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		OBJ_84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"UberSegmentedControl::UberSegmentedControl::Product" /* UberSegmentedControl.framework */,
+				"TransformationsUIShared::TransformationsUIShared::Product" /* TransformationsUIShared.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"TransformationsUIShared::TransformationsUIShared" /* TransformationsUIShared */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_90 /* Build configuration list for PBXNativeTarget "TransformationsUIShared" */;
+			buildPhases = (
+				OBJ_93 /* Sources */,
+				OBJ_142 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_144 /* PBXTargetDependency */,
+			);
+			name = TransformationsUIShared;
+			productName = TransformationsUIShared;
+			productReference = "TransformationsUIShared::TransformationsUIShared::Product" /* TransformationsUIShared.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"UberSegmentedControl::UberSegmentedControl" /* UberSegmentedControl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_152 /* Build configuration list for PBXNativeTarget "UberSegmentedControl" */;
+			buildPhases = (
+				OBJ_155 /* Sources */,
+				OBJ_162 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UberSegmentedControl;
+			productName = UberSegmentedControl;
+			productReference = "UberSegmentedControl::UberSegmentedControl::Product" /* UberSegmentedControl.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftMigration = 9999;
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "TransformationsUIShared" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"TransformationsUIShared::TransformationsUIShared" /* TransformationsUIShared */,
+				"UberSegmentedControl::UberSegmentedControl" /* UberSegmentedControl */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_155 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_156 /* Constants.swift in Sources */,
+				OBJ_157 /* DividerView.swift in Sources */,
+				OBJ_158 /* SegmentButton.swift in Sources */,
+				OBJ_159 /* StackViewGestureHandler.swift in Sources */,
+				OBJ_160 /* UIView+fill.swift in Sources */,
+				OBJ_161 /* UberSegmentedControl.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				45C01073258B6BD10057500D /* EditorToolbar.swift in Sources */,
+				45C01074258B6BD10057500D /* ArrangeableToolbar.swift in Sources */,
+				45C01076258B6BD10057500D /* CIImageView.swift in Sources */,
+				45C01083258B6BD10057500D /* BoundedRangeCommand.swift in Sources */,
+				45C01077258B6BD10057500D /* CenteredScrollView.swift in Sources */,
+				45C01084258B6BD10057500D /* EditDataSource.swift in Sources */,
+				45C0107C258B6BD10057500D /* Snapshotable.swift in Sources */,
+				45C0107F258B6BD10057500D /* PointerHashable.swift in Sources */,
+				45C0106F258B6BD10057500D /* StandardToolbar.swift in Sources */,
+				45C01062258B6BD10057500D /* UIGeometry+Extras.swift in Sources */,
+				45C01061258B6BD10057500D /* ModuleViewController+Setup.swift in Sources */,
+				45C0105C258B6BD10057500D /* CircleCropLayer.swift in Sources */,
+				45C01085258B6BD10057500D /* EditorModuleCommand.swift in Sources */,
+				45C0106E258B6BD10057500D /* RenderNodeCategory.swift in Sources */,
+				45C01070258B6BD10057500D /* SegmentedControlToolbar.swift in Sources */,
+				45C01065258B6BD10057500D /* UIView+Constraints.swift in Sources */,
+				45C0105D258B6BD10057500D /* RectCropLayer.swift in Sources */,
+				45C01060258B6BD10057500D /* ModuleViewController.swift in Sources */,
+				45C0107B258B6BD10057500D /* RenderNode.swift in Sources */,
+				45C0106D258B6BD10057500D /* EditorToolbarStyle.swift in Sources */,
+				45C0105A258B6BD10057500D /* Math+Clamp.swift in Sources */,
+				45C01080258B6BD10057500D /* DescriptibleEditorItem.swift in Sources */,
+				45C0107A258B6BD10057500D /* VisualFXWrapperView.swift in Sources */,
+				45C01079258B6BD10057500D /* ToolbarScrollView.swift in Sources */,
+				45C0106B258B6BD10057500D /* L18.swift in Sources */,
+				45C0107D258B6BD10057500D /* EditorModuleController.swift in Sources */,
+				45C01082258B6BD10057500D /* EditorModules.swift in Sources */,
+				45C01072258B6BD10057500D /* BoundedRangeCommandToolbar.swift in Sources */,
+				45C01069258B6BD10057500D /* Constants.swift in Sources */,
+				45C0107E258B6BD10057500D /* Editable.swift in Sources */,
+				45C01081258B6BD10057500D /* EditorModule.swift in Sources */,
+				45C01067258B6BD10057500D /* CGPoint+Distance.swift in Sources */,
+				45C0105E258B6BD10057500D /* RectCropGesturesHandler.swift in Sources */,
+				45C01071258B6BD10057500D /* DiscardApplyToolbar.swift in Sources */,
+				45C01075258B6BD10057500D /* TitledImageButton.swift in Sources */,
+				45C01078258B6BD10057500D /* ToolbarButton.swift in Sources */,
+				45C0106A258B6BD10057500D /* EditorToolbarItemStyle.swift in Sources */,
+				45C0105F258B6BD10057500D /* CircleCropGesturesHandler.swift in Sources */,
+				45C0106C258B6BD10057500D /* Styles.swift in Sources */,
+				45C01063258B6BD10057500D /* CoreGraphics+Transformations.swift in Sources */,
+				45C01066258B6BD10057500D /* UIColor+Bundle.swift in Sources */,
+				45C01064258B6BD10057500D /* UIImage+Bundle.swift in Sources */,
+				45C01068258B6BD10057500D /* CoreGraphics+Rounding.swift in Sources */,
+				45C0105B258B6BD10057500D /* Bundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_144 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "UberSegmentedControl::UberSegmentedControl" /* UberSegmentedControl */;
+			targetProxy = 4521969A25090696008C0907 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_153 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = TransformationsUIShared.xcodeproj/UberSegmentedControl_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = UberSegmentedControl;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = UberSegmentedControl;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_154 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = TransformationsUIShared.xcodeproj/UberSegmentedControl_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = UberSegmentedControl;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = UberSegmentedControl;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "$(inherited) -DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = TransformationsUIShared.xcodeproj/TransformationsUIShared_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = TransformationsUIShared;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = TransformationsUIShared;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		OBJ_92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = TransformationsUIShared.xcodeproj/TransformationsUIShared_Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = TransformationsUIShared;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_VERSION = 5.0;
+				TARGET_NAME = TransformationsUIShared;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_152 /* Build configuration list for PBXNativeTarget "UberSegmentedControl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_153 /* Debug */,
+				OBJ_154 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "TransformationsUIShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_90 /* Build configuration list for PBXNativeTarget "TransformationsUIShared" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_91 /* Debug */,
+				OBJ_92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}
