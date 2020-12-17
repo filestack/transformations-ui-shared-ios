@@ -82,7 +82,7 @@ public class CIImageView: MTKView {
 
         _ = try? ciContext.startTask(toRender: image, from: image.extent, to: destination, at: .zero)
 
-        #if targetEnvironment(simulator)
+        #if targetEnvironment(simulator) || targetEnvironment(macCatalyst)
         commandBuffer.present(currentDrawable)
         #else
         commandBuffer.present(currentDrawable, afterMinimumDuration: 1 / CFTimeInterval(preferredFramesPerSecond))
