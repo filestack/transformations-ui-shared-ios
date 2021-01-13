@@ -76,4 +76,5 @@ public protocol ObjectRenderNode: RenderGroupChildNode & ViewableNode {
     var center: CGPoint { get set }
     var bounds: CGRect { get set }
     var transform: CGAffineTransform { get set }
+    var opacity: CGFloat { get set }
 }
